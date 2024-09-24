@@ -1,0 +1,62 @@
+---
+
+https://softwareengineering.stackexchange.com/questions/61376/aggregation-vs-composition
+
+Aggregation vs composition ( No relation to cardinality, 1: many etc )
+
+Simple rules:
+
+1. A "owns" B = Composition : B has no meaning or purpose in the system without A
+2. A "uses" B = Aggregation : B exists independently (conceptually) from A
+
+Example 1:
+
+A Company is an aggregation of People. A Company is a composition of Accounts. When a Company ceases to do business its Accounts cease to exist but its People continue to exist.
+
+---
+
+In object-oriented programming (OOP), the **"is-a"** and **"has-a"** relationships describe how different objects or classes relate to each other. Here’s a breakdown:
+
+### **"Is-a" Relationship (Inheritance)**
+
+- **Definition:** The "is-a" relationship is established through inheritance, where one class is a subclass of another.
+- **Usage:** This indicates that the subclass is a specific type of the parent class. The subclass inherits behavior and attributes from the parent.
+- **Example:** If you have a class `Animal` and a subclass `Dog`, the relationship between `Dog` and `Animal` is an "is-a" relationship because a `Dog` **is an** `Animal`.
+
+```python
+pythonCopy code
+class Animal:
+    pass
+
+class Dog(Animal):
+    pass
+
+```
+
+In this case, `Dog` inherits from `Animal`, so a `Dog` **is an** `Animal`.
+
+### **"Has-a" Relationship (Composition/Aggregation)**
+
+- **Definition:** The "has-a" relationship is established through composition or aggregation, where one class contains another class as a member or attribute.
+- **Usage:** This indicates that one class **has** another class as part of its structure or functionality.
+- **Example:** If you have a class `Car` and another class `Engine`, the relationship between `Car` and `Engine` is a "has-a" relationship because a `Car` **has an** `Engine`.
+
+```python
+pythonCopy code
+class Engine:
+    pass
+
+class Car:
+    def __init__(self):
+        self.engine = Engine()  # Car "has an" engine
+
+```
+
+In this case, `Car` contains an `Engine`, so a `Car` **has an** `Engine`.
+
+### Summary:
+
+- **"Is-a" relationship:** Inheritance between classes (e.g., `Dog` is an `Animal`).
+- **"Has-a" relationship:** Composition or aggregation where one class is a part of another (e.g., `Car` has an `Engine`).
+
+---
